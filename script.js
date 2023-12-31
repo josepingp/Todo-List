@@ -16,7 +16,6 @@ addBtn.addEventListener('click', (Element) => {
     };
 });
 
-
 ul.addEventListener('click', (element) => {
     element.target.classList.toggle('checked');
     
@@ -24,7 +23,6 @@ ul.addEventListener('click', (element) => {
 });
 
 selector.addEventListener('change', filter) 
-
 
 /* funcion para añadir tareas */
 function addTask() {
