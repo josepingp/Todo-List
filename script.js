@@ -103,6 +103,7 @@ function recharge() {
     }
     id = ul.lastChild.getAttribute('id');
     id++;
+    selector.value = 'All';
 };
 
 /* Funcion para filtrar las tareas */

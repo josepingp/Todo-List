@@ -143,7 +143,3 @@ li::before {
 li.checked::before  {
     content: url(assets/pngegg.png);
 }
-
-#ocult {
-    display: none;
-}
