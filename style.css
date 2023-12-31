@@ -100,7 +100,7 @@ li .del-btn {
     height: 100%;
     width: 35px;
     border: none;
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.555);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     color: white;
@@ -142,4 +142,8 @@ li::before {
 
 li.checked::before  {
     content: url(assets/pngegg.png);
+}
+
+#ocult {
+    display: none;
 }
