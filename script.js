@@ -19,7 +19,7 @@ addBtn.addEventListener('click', (Element) => {
 ul.addEventListener('click', (element) => {
     element.target.classList.toggle('checked');
     
-    saveChangeAtribute(element.target)
+    saveChangeAtribute(element.target);
 });
 
 selector.addEventListener('change', filter) 
@@ -72,8 +72,11 @@ function saveChangeAtribute(task) {
     if (id) localStorage.setItem(id, [taskToSave.firstChild.textContent, checker]);
 };
 
-/* Recuperar el local storage */
-function getStorage() {
+
+
+/* Recargar el storage en el HTML */
+function recharge() {
+
     let keyList = [];
     let taskList = [];
 
@@ -82,17 +85,8 @@ function getStorage() {
         keyList.unshift(key);
         taskList.unshift(localStorage.getItem(key));
     };
-
-    return [keyList, taskList];
-};
-
-/* Recargar el storage en el HTML */
-function recharge() {
-
-    let list = getStorage();
-    let keyList = list[0];
-    let taskList = list[1];
     
+
     for (const i in taskList) {
         const li = document.createElement('li');
         li.textContent = taskList[i].split(',')[0];
@@ -100,8 +94,8 @@ function recharge() {
         li.setAttribute('id', keyList[i]);
         if (taskList[i].split(',')[1] == 'true') li.classList.add('checked');
         ul.appendChild(li);
+        id = ul.lastChild.getAttribute('id');
     }
-    id = ul.lastChild.getAttribute('id');
     id++;
     selector.value = 'All';
 };
