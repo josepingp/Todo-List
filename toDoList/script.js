@@ -1,6 +1,7 @@
 const ul = document.querySelector('.task-list');
 const addBtn = document.querySelector('#add-task');
 const selector = document.querySelector('#selector');
+
 let id = 0;
 
 document.addEventListener('DOMContentLoaded', recharge());
