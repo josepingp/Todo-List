@@ -130,7 +130,6 @@ li .del-btn {
     cursor: pointer;
     margin-bottom: 5px;
 }
-
 li::before {
     display: flex;
     content: '';
@@ -140,6 +139,8 @@ li::before {
     
 }
 
+
 li.checked::before  {
     content: url(assets/pngegg.png);
+    
 }

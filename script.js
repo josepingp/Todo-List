@@ -18,7 +18,7 @@ addBtn.addEventListener('click', (Element) => {
 
 ul.addEventListener('click', (element) => {
     element.target.classList.toggle('checked');
-    
+    filter();
     saveChangeAtribute(element.target);
 });
 
@@ -72,8 +72,6 @@ function saveChangeAtribute(task) {
     if (id) localStorage.setItem(id, [taskToSave.firstChild.textContent, checker]);
 };
 
-
-
 /* Recargar el storage en el HTML */
 function recharge() {
 
@@ -99,16 +97,14 @@ function recharge() {
     id++;
     selector.value = 'All';
 };
-
 /* Funcion para filtrar las tareas */
-function filter(element) {
+function filter() {
     const taskList = ul.childNodes;
-
+    
     taskList.forEach((t) => {
-        switch(element.target.value) {
+        switch(selector.value) {
             case 'All':
                 t.style.display = 'flex';
-                console.log(t.style)
                 break;
             case 'Completed':
                 if (t.classList.contains('checked')) {
@@ -118,7 +114,7 @@ function filter(element) {
                     t.style.display = 'none';
                 }
                 break;
-            default:
+            case 'Incomplete':
                 if (t.classList.contains('checked')) {
                     t.style.display = 'none';
                 }
